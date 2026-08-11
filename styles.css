@@ -83,6 +83,8 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 14px 20px;
+  flex-wrap: wrap;
   margin-bottom: 72px;
 }
 
@@ -140,9 +142,10 @@ a:hover { text-decoration: underline; }
 .hero-name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.9rem, 8vw, 5.2rem);
+  font-size: clamp(2.1rem, 9vw, 5.2rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
+  overflow-wrap: break-word;
 }
 
 .hero-name .accent {
@@ -247,10 +250,11 @@ main.container { padding-top: 72px; }
 
 .section-head h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   white-space: nowrap;
+  min-width: 0;
 }
 
 .rule {
@@ -371,7 +375,7 @@ main.container { padding-top: 72px; }
 /* ---------- projects ---------- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 24px;
 }
 
@@ -423,11 +427,14 @@ main.container { padding-top: 72px; }
   display: flex;
   align-items: flex-start;
   gap: 22px;
+  flex-wrap: wrap;
   background: linear-gradient(120deg, rgba(59, 130, 246, 0.09), rgba(14, 165, 233, 0.07));
   border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: var(--radius);
   padding: 30px 36px;
 }
+
+.goal > div:last-child { min-width: 0; flex: 1 1 260px; }
 
 .goal-icon {
   font-size: 2rem;
@@ -447,7 +454,7 @@ main.container { padding-top: 72px; }
 /* ---------- working style ---------- */
 .pillars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 24px;
 }
 
@@ -577,15 +584,38 @@ main.container { padding-top: 72px; }
 .skip-link:focus { left: 12px; }
 
 /* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .section-head h2 { white-space: normal; }
+  .section-head { flex-wrap: wrap; }
+}
+
 @media (max-width: 640px) {
-  .container { padding: 0 22px; }
-  .hero { padding: 40px 0 64px; }
-  .hero-top { margin-bottom: 48px; }
-  .job { padding: 28px 24px; }
+  .container { padding: 0 20px; }
+  .hero { padding: 36px 0 60px; }
+  .hero-top { margin-bottom: 44px; }
+  .job { padding: 26px 22px; }
   .job-top { grid-template-areas: "name" "role" "dates"; }
   .job-top .dates { justify-self: start; }
   .socials a { padding: 9px 15px; font-size: 0.9rem; }
-  .goals, .references-note { padding: 26px 24px; }
+  .goal, .references-note { padding: 24px 22px; }
+  .references-note { flex-direction: column; align-items: flex-start; }
+  .references-note .btn { align-self: stretch; justify-content: center; }
+  .card { padding: 26px 22px; }
+  .pillar { padding: 28px 24px; }
+}
+
+@media (max-width: 420px) {
+  .contact li { font-size: 0.95rem; }
+  .goal { flex-direction: column; align-items: flex-start; }
+  .availability { font-size: 0.85rem; }
+  .footer-inner { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 340px) {
+  .container { padding: 0 16px; }
+  .hero-role { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .hero-role::before { width: 30px; height: 2px; }
+  .socials a { width: 100%; justify-content: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
