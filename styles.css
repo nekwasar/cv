@@ -192,7 +192,16 @@ a:hover { text-decoration: underline; }
 
 .contact a { color: #e2e8f0; font-weight: 500; }
 
-.c-icon { font-size: 1.05rem; filter: grayscale(0.2); }
+.c-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .socials {
   display: flex;
@@ -301,7 +310,16 @@ main.container { padding-top: 72px; }
   border-color: rgba(59, 130, 246, 0.45);
 }
 
-.skill-ico { font-size: 1.2rem; line-height: 1; }
+.skill-ico {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--accent-deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---------- experience ---------- */
 .job {
@@ -437,7 +455,6 @@ main.container { padding-top: 72px; }
 .goal > div:last-child { min-width: 0; flex: 1 1 260px; }
 
 .goal-icon {
-  font-size: 2rem;
   width: 60px;
   height: 60px;
   flex-shrink: 0;
@@ -446,6 +463,16 @@ main.container { padding-top: 72px; }
   border-radius: 16px;
   background: #fff;
   box-shadow: var(--shadow);
+}
+
+.goal-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--accent-deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .goal h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 6px; }
@@ -507,13 +534,22 @@ main.container { padding-top: 72px; }
 }
 
 .ref-ico {
-  font-size: 1.9rem;
   width: 60px;
   height: 60px;
   display: grid;
   place-items: center;
   border-radius: 16px;
   background: var(--accent-soft);
+}
+
+.ref-ico svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--accent-deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .references-note p {
@@ -560,6 +596,18 @@ main.container { padding-top: 72px; }
 }
 
 .footer a { color: var(--accent-deep); font-weight: 500; }
+
+.back-top {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 2px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---------- reveal animation ---------- */
 .reveal {
