@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.js",
   "scripts": {
-    "build": "esbuild src/main.js --bundle --minify --outfile=analytics.js"
+    "analytics:build": "esbuild src/main.js --bundle --minify --outfile=analytics.js"
   },
   "repository": {
     "type": "git",
